@@ -1,10 +1,14 @@
-# fly.toml app configuration file generated for despliegue-de-apps
+# fly.toml app configuration file generated for despliegue-de-apps on 2026-09-14T18:34:04Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
 app = 'despliegue-de-apps'
 primary_region = 'gru'
 
 [build]
 
-[mounts]
+[[mounts]]
   source = 'pb_data'
   destination = '/pb/pb_data'
 
@@ -19,3 +23,4 @@ primary_region = 'gru'
   memory = '256mb'
   cpu_kind = 'shared'
   cpus = 1
+  memory_mb = 256
