@@ -54,11 +54,11 @@ El aislamiento se logra a nivel de kernel mediante dos primitivas fundamentales 
 * Namespaces: Proveen aislamiento visual de recursos. Cada contenedor tiene su propio espacio de nombres para procesos (PID), interfaces de red (NET), montajes de archivos (MNT), comunicacion entre procesos (IPC) y usuarios (USER).
 * Control Groups (cgroups): Limitan y monitorean el consumo de recursos de hardware, tales como cuotas de procesamiento (CPU), memoria RAM, entrada/salida de disco (I/O) y ancho de banda de red.
 
-Sobre la pila de capas inmutables de la imagen, Docker anade al contenedor una capa delgada de lectura y escritura (Read/Write Layer). Todas las modificaciones que el proceso realice en tiempo de ejecucion ocurren en esta capa.
+Sobre la pila de capas inmutables de la imagen, Docker añade al contenedor una capa delgada de lectura y escritura (Read/Write Layer). Todas las modificaciones que el proceso realice en tiempo de ejecucion ocurren en esta capa.
 
 ### 1.3 Gestion de Almacenamiento: Capa Efimera vs Volumenes
 
-Por diseno, la capa de lectura y escritura de un contenedor es efimera. Si un contenedor se detiene y se elimina (mediante `docker rm` o un nuevo despliegue), todos los datos creados durante su ejecucion se destruyen de forma permanente.
+Por diseño, la capa de lectura y escritura de un contenedor es efimera. Si un contenedor se detiene y se elimina (mediante `docker rm` o un nuevo despliegue), todos los datos creados durante su ejecucion se destruyen de forma permanente.
 
 Para persistir informacion critico-transaccional (como bases de datos) se utilizan mecanismos de almacenamiento dedicados:
 
@@ -207,7 +207,7 @@ Un `Dockerfile` es un script declarativo que especifica los pasos secuenciales n
 
 Ubicacion: `despliegue-apliaciones/Clase 2/Mi Landing/Dockerfile`
 
-Este Dockerfile fue disenado por el docente para empaquetar la landing page estatica en un servidor web industrializado (Nginx):
+Este Dockerfile fue diseñado por el docente para empaquetar la landing page estatica en un servidor web industrializado (Nginx):
 
 ```dockerfile
 # 1. Utiliza Alpine Linux con Nginx precompilado (peso aproximado: ~23 MB)
@@ -266,7 +266,7 @@ Por este motivo, las instrucciones que cambian con menor frecuencia (como la ins
 
 ### 4.1 Principios de Orquestacion Multicontenedor
 
-Docker Compose es una herramienta disenada para definir, configurar y levantar aplicaciones de multiples contenedores en un solo paso. En lugar de ejecutar multiples comandos complejos `docker run` con decenas de banderas por terminal, toda la topologia de la aplicacion se describe en un archivo estructurado en formato YAML.
+Docker Compose es una herramienta diseñada para definir, configurar y levantar aplicaciones de multiples contenedores en un solo paso. En lugar de ejecutar multiples comandos complejos `docker run` con decenas de banderas por terminal, toda la topologia de la aplicacion se describe en un archivo estructurado en formato YAML.
 
 ### 4.2 Redes Aisladas y Resolucion DNS entre Servicios
 
@@ -328,7 +328,7 @@ volumes:
 
 ### 4.5 Comandos Esenciales de Gestion
 
-Comandos ensenados durante la clase para operar y diagnosticar contenedores:
+Comandos enseñados durante la clase para operar y diagnosticar contenedores:
 
 Levantar todos los servicios en segundo plano (modo detached):
 ```bash
@@ -377,7 +377,7 @@ Toda la base de datos, configuraciones, indices y esquemas residen en dos archiv
 Al inicializar PocketBase por primera vez, el sistema no contiene credenciales maestras. Existen dos mecanismos para crear la cuenta de superusuario:
 
 1. A traves de la interfaz visual:
-   Al ejecutar el contenedor, se expone la ruta administrativa en `http://localhost:8090/_/` (o la direccion pública correspondiente). La consola mostrara un formulario inicial solicitando un correo electronico y una contrasena de al menos 10 caracteres.
+   Al ejecutar el contenedor, se expone la ruta administrativa en `http://localhost:8090/_/` (o la direccion publica correspondiente). La consola mostrara un formulario inicial solicitando un correo electronico y una contraseña de al menos 10 caracteres.
 2. A traves de la terminal por comando de consola:
    ```bash
    docker exec -it <id_contenedor> /pb/pocketbase superuser upsert admin@correo.com password1234
