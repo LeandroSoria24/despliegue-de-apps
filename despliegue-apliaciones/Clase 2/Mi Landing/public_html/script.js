@@ -12,7 +12,7 @@ async function fetchData(){
 
         data.items.forEach(alumno => {
             const li = document.createElement('li');
-            li.textContent = alumno.nombre;
+            li.textContent = alumno.nombre || alumno.Nombre;
 
             lista.appendChild(li);
         });
