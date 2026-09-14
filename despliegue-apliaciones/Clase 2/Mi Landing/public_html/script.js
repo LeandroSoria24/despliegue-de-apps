@@ -1,5 +1,5 @@
 async function fetchData(){
-    const url = 'http://localhost:8090/api/collections/alumnos/records?perPage=50'
+    const url = '/api/collections/alumnos/records?perPage=50'
 
     try{
         const response = await fetch(url);
